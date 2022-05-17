@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>New Category</title>
+    <style>
+        button {
+
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            background-color: #4CAF50;
+        }
+
+        h1 {
+            text-align: center;
+            color: blue;
+        }
+
+        form {
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="background-color:#9999FF;">
+    <h1>Create New Expense</h1>
+    <form th:action ="@{/Expense_Dtls}" th:object ="${expense}" method="post"
+			 style="max-width: 600px; margin: 0 auto;">
+		<div class="m-3">
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Expense Id : </label>
+				<div class="col-8">
+					<input type="number" id="expenseid" name="expense_id" placeholder="Enter Expense Id" required />
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Expense Date : </label>
+				<div class="col-8">
+					<input type="date" id="expensedate" name="expense_date" placeholder="Expense Date" 
+							required />
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Description : </label>
+				<div class="col-8">
+					<input  type="text" id="dn" name="description" placeholder="Expense Description" required/>
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Location : </label>
+				<div class="col-8">
+					<input type="text" id="loc" name="location" placeholder="Location" required />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Category Id : </label>
+				<div class="col-8">
+					<input type="number" id="categoryid" name="category_id" placeholder="Category Id" required />
+				</div>
+			</div>
+			
+			<div>
+				<button type="submit" class="btn btn-primary">Save</button> 
+			</div>
+		</div>
+		</form>
+</body>
+
+</html>

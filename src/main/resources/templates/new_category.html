@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:www.thymeLeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>New Category</title>
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/webjars/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+    <style>
+
+        h1 {
+            text-align: center;
+            color: blue;
+        }
+
+        h3 {
+            text-align: center;
+            color: blue;
+        }
+
+        form {
+            text-align: center;
+        }
+    </style>
+</head >
+
+<body style="background-color:#9999FF;">
+    <h1>Create New Category</h1>
+ 
+        <h2><a th:href="@{/usr}">List of Expense</a></h2>
+        
+   <!--   <form th:action="@{/Category_Dtls}" th:object="${category}" method="post">
+        <label>Category Id : <input type="number" id="category_id" name="category_id" required placeholder="Category Id"></label><br /><br />
+        <label>Category Name : <input type="text" id="category_name" name="category_name" required placeholder="Category Name"></label><br /><br />
+        <button type="submit">Save</button>
+    </form> -->
+    <form th:action="@{/Category_Dtls}" th:object="${category}"  
+			method="post" style="max-width: 600px; margin: 0 auto;">
+		<div class="m-3">
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Category Id : </label>
+				<div class="col-8">
+					<input type="number" id="category_id" name="category_id" placeholder="Category Id" required />
+				</div>
+			</div>
+			
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Category Name : </label>
+				<div class="col-8">
+					<input type="text" id="category_name" name="category_name" placeholder="Category Name" 
+							required />
+				</div>
+			</div>
+			
+			<div>
+				<button type="submit" class="btn btn-primary">Save</button> 
+			</div>
+		</div>
+		</form>
+</body>
+</html>
